@@ -1,9 +1,10 @@
-#include <iostream>
+#include <QCoreApplication>
+#include <QTimer>
 
-using namespace std;
-
-int main()
+int main(int argc, char *argv[])
 {
-    cout << "Hello World!" << endl;
-    return 0;
+    QCoreApplication a(argc, argv);
+    qDebug("Hello World!");
+    QTimer::singleShot(0, &a, &QCoreApplication::quit);
+    return a.exec();
 }
